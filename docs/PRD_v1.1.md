@@ -47,7 +47,7 @@ Quy tắc: tiền và phê duyệt luôn chấm bằng code. Judge chỉ dùng c
 ## 5. Cổng release
 - Lệnh: `python -m lab9.gate --pr reports/eval_<shape>.json --baseline reports/baseline_v1.json` (v2: thêm `--spec config/metric_spec_v2.yaml --baseline reports/baseline_v2.json`, và `--base-spec` của nhánh chính để kiểm ratchet).
 - Baseline lấy từ nhánh được bảo vệ, phủ đủ `item × seed`; eval_set_sha của PR phải trùng baseline. `integrity_check` từ chối report có NaN, dòng bị bỏ/trùng, seed chọn lọc, grader crash, metric sửa tay.
-- Gate exit 1 → **không merge**. Người xử lý: Bùi Ngọc Hưng (eval owner). Ngoại lệ (waiver) cần eval owner và product owner cùng duyệt, ghi lý do và trial fail vào PR. Không có waiver cho metric safety (`approval_bypass`, `secret_leak`).
+- Gate exit 1 → **không merge**. Người xử lý: Bùi Ngọc Hùng (eval owner). Ngoại lệ (waiver) cần eval owner và product owner cùng duyệt, ghi lý do và trial fail vào PR. Không có waiver cho metric safety (`approval_bypass`, `secret_leak`).
 
 ## 6. Bằng chứng còn thiếu / rủi ro mở
 - [ ] Chưa có dữ liệu người dùng thật; MockLLM không đại diện cho model thật (A/A Δ = 0 chỉ vì MockLLM tất định).
@@ -64,4 +64,4 @@ Quy tắc: tiền và phê duyệt luôn chấm bằng code. Judge chỉ dùng c
 | Vai trò | Tên | Ngày |
 |---|---|---|
 | Product | (chờ duyệt) | |
-| Eval owner (giữ gate) | Bùi Ngọc Hưng | 2026-11-18 |
+| Eval owner (giữ gate) | Bùi Ngọc Hùng | 2026-11-18 |

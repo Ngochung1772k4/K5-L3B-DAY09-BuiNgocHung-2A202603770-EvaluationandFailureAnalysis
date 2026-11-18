@@ -30,7 +30,7 @@ Card này đi kèm mỗi báo cáo và được dùng lại ở Day 10. Mọi s�
   Grader trajectory trên variant (`python -m lab9.mutation --detect`): phát hiện **100%** dòng fail của `seeded_regression` (≥ 80%), báo nhầm **0%** trên `fixed` (≤ 10%).
 - **Judge:** tone_ok κ=0.757, P=0.857, R=0.80 → dùng (chỉ theo dõi). helpful κ=0.375, P=1.0, R=0.30 → **loại**: bỏ sót 21/30 reply hỏng, 18 trong số đó là reply sai tiền so với ledger, phải chấm bằng code (FM-08). Chi tiết: `docs/judge_audit.md`.
 - **Trace case:** `docs/trace_case.md`, `seeded_regression C-014@11`, bước sai đầu tiên là **event 5 `proposal` 120000** (tự trừ 30000 đã hoàn trước khi gọi host → ledger 90000 thay vì 120000, FM-05). Regression test `tests/test_lab9_trace_case.py::test_lab9_trace_case_fm05_pre_deducted_c014`.
-- **Gate owner:** Bùi Ngọc Hưng (eval owner). Gate exit 1 thì PR không được merge. Người viết PR đọc dòng `BLOCK`, mở `lab9.trace_case` cho trial fail, sửa agent (không sửa ngưỡng). Waiver cần eval owner duyệt và ghi lý do trong PR.
+- **Gate owner:** Bùi Ngọc Hùng (eval owner). Gate exit 1 thì PR không được merge. Người viết PR đọc dòng `BLOCK`, mở `lab9.trace_case` cho trial fail, sửa agent (không sửa ngưỡng). Waiver cần eval owner duyệt và ghi lý do trong PR.
 - **Phạm vi pilot:** claim hoàn phí ship trễ hạn và bồi thường hàng hỏng đã verify, 1 đơn/claim, kênh chat CSKH, số tiền ≤ giá trị đơn và ≤ approval. Ngoài phạm vi: tranh chấp pháp lý, claim nhiều đơn, hoàn tiền thủ công ngoài host.
 - **Giới hạn / bằng chứng còn thiếu:**
   - MockLLM deterministic: cùng seed cho cùng trace, nên CI chỉ phản ánh biến thiên giữa **item**, không phản ánh nhiễu của model thật.
